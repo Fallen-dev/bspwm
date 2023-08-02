@@ -1,0 +1,10 @@
+case "$1" in
+  window)
+    hidden_window=$(bspc query -N -n .hidden -d focused)
+    [ $hidden_window ] && bspc node $hidden_window -g hidden=off || bspc node -g hidden=on
+  ;;
+  playpause)
+    [[ $(playerctl status) == "Paused" ]] && echo %{A1:playerctl play:}󰐌%{A} || echo %{A1:playerctl pause:}󰏥%{A}
+  ;;
+esac
+
