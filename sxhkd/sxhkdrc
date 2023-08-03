@@ -2,7 +2,7 @@ alt + Return
   st
 
 alt + space
-  bash ~/.config/rofi/launchers/type-7/launcher.sh
+  rofi -show drun
 
 alt + shift + r
   bspc wm --restart
@@ -15,6 +15,9 @@ alt + {_, control} + q
 
 alt + p
   dmenu_run
+
+alt + Tab
+  rofi -show window -theme ~/.config/rofi/themes/tokyonight.rasi
 
 alt + {f, t}
   bspc node --state {~fullscreen, ~floating}
@@ -34,9 +37,6 @@ alt + {bracketleft, bracketright}
 alt + shift + {bracketleft, bracketright}
   bspc node --to-desktop {prev, next} --follow
 
-alt + Tab
-	bspc node --focus last
-
 super + {_, shift} + {h, j, k, l}
   bspc node {--focus, --swap} {west, south, north, east}
 
@@ -52,6 +52,8 @@ super + control + k
 super + control + j
   bspc node --resize top 0 20
 
+super + period
+  rofi -show emoji
 
 XF86MonBrightnessUp
   brightnessctl set 10%+

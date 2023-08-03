@@ -1,24 +1,20 @@
 #!/bin/bash
 
-apps="bspwm sxhkd dunst polybar nitrogen picom"
+apps="bspwm sxhkd dunst polybar rofi picom"
 
 copyto() {
   echo cp $1 ~/.config/$1 -r
 }
 
+[ -d ~/.config ] || mkdir ~/.config
+
 for app in $apps; do copyto $app; done
 
-initxinit() {
-  case "$1" in
-    1)
-      echo -e "Xinitrc file already exists!\nAppending \`exec bspwm\` to the file"
-      echo "esec bspwm" >> ~/.xinitrc
-    ;;
-    *)
-      echo "Creating Xinitrc file at ~/.xinitrc"
-      echo "exec bspwm" > ~/.xinitrc
-    ;;
-  esac
-  echo ! DONE: Now logout and use the command \`startx\`
-}
-[ -f ~/.xinitrc ] && initxinit 1  || initxinit 0
+[ -f ~/.xinitrc ] && sed 's/exec .*/exec bspwm/' test -i || echo exec bspwm > ~/.xinitrc
+
+# install fonts
+mkdir -pv ~/.local/share/fonts/
+cp fonts/*.ttf ~/.local/share/fonts/
+fc-cache -fv
+
+echo "DONE! Logout and login using the command 'startx'"

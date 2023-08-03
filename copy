@@ -1,6 +1,6 @@
 #!/usr/bin/fish
 
-set -l apps bspwm sxhkd dunst polybar nitrogen picom
+set -l apps bspwm sxhkd dunst polybar picom rofi
 
 function copy
   for arg in $argv
