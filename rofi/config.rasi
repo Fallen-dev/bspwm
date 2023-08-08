@@ -1,0 +1,17 @@
+configuration {
+	/*---------- General setting ----------*/
+	modi: "drun,window,emoji";
+  font: "Roboto 12";
+	case-sensitive: false;
+	cycle: true;
+	filter: "";
+	scroll-method: 0;
+	normalize-match: true;
+	show-icons: true;
+	steal-focus: false;
+
+	/*---------- Matching setting ----------*/
+	matching: "normal";
+	tokenize: true;
+}
+@theme "~/.config/rofi/themes/spotlight-dark.rasi"
