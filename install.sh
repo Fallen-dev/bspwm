@@ -41,4 +41,4 @@ fc-cache -fv
 cp wall.jpg ~/Pictures
 echo The wallpaper is placed at ~/Pictures dir
 
-echo Setup complete!!!
+echo Setup complete!!! You are ready to GO!
