@@ -14,7 +14,7 @@ echo Dotfiles copied to config dir
 
 [ -f ~/.xinitrc ] && cp ~/.xinitrc ~/.xinitrc.bak
 [ -d ~/.local/bin ] || mkdir -pv ~/.local/bin
-[ -d ~/.local/share/fonts ] mkdir -pv ~/.local/share/fonts/
+[ -d ~/.local/share/fonts ] || mkdir -pv ~/.local/share/fonts/
 [ -d ~/Pictures ] || mkdir -v ~/Pictures
 
 
@@ -44,5 +44,7 @@ fc-cache -fv
 
 cp ./wall.jpg ~/Pictures
 echo The wallpaper is placed at ~/Pictures dir
+
+echo NOTE: .xinitrc file esists and is renamed as .xinitrc.bak
 
 echo Setup complete!!! You are ready to GO!
